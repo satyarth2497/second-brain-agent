@@ -3,7 +3,7 @@ from typing import List
 from pydantic_ai import Agent, RunContext
 from pydantic import BaseModel
 from langchain_community.vectorstores import FAISS
-from duckduckgo_search import DDGS 
+from ddgs import DDGS 
 
 # PydanticAI chunk format
 class DocChunk(BaseModel):

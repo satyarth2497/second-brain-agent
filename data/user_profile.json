@@ -1,0 +1,12 @@
+{
+  "diet": "gluten-free",
+  "allergies": [
+    "peanuts"
+  ],
+  "dislikes": [
+    "fish"
+  ],
+  "calories_target": 2000,
+  "weight": 70,
+  "height": 175
+}

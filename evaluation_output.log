@@ -1,0 +1,140 @@
+/Users/satyarthshukla/second_brain_agent/src/agent/rag/vector_store.py:7: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 1.0. An updated version of the class exists in the `langchain-huggingface package and should be used instead. To use it run `pip install -U `langchain-huggingface` and import as `from `langchain_huggingface import HuggingFaceEmbeddings``.
+  embeddings = HuggingFaceEmbeddings(model_name="nomic-ai/nomic-embed-text-v1.5",
+<All keys matched successfully>
+
+================================================================================
+SECOND BRAIN AGENT - EVALUATION SUITE
+================================================================================
+
+Initializing system...
+✓ System initialized
+
+
+[1/10] routing_technical_documentation_query
+Category: routing | Focus: technical_documentation
+Input: What is the email notification tool architecture?
+--------------------------------------------------------------------------------
+✓ PASS (Score: 1.0/1.0, Attempts: 1)
+Source: [rag]
+Answer: The email notification tool architecture is based on a microservices design, with a message queue and a worker process t...
+  ✓ Correct routing to rag agent
+  ✓ Provided substantive answer
+  ✓ Provided confident answer
+
+[2/10] routing_nutrition_query
+Category: routing | Focus: nutrition_advice
+Input: What should I eat for breakfast on a low-calorie diet?
+--------------------------------------------------------------------------------
+✓ PASS (Score: 1.0/1.0, Attempts: 1)
+Source: [health]
+Answer: Considering your low-calorie diet, oatmeal with fruits and nuts would be a good breakfast option. You can also consider ...
+  ✓ Correct routing to health agent
+  ✓ Provided substantive answer
+  ✓ Provided confident answer
+
+[3/10] routing_meal_planning_query
+Category: routing | Focus: meal_planning
+Input: Suggest vegan dinner recipes for tonight
+--------------------------------------------------------------------------------
+✓ PASS (Score: 1.0/1.0, Attempts: 2)
+Source: [health]
+Answer: Here are 3 delicious vegan dinner recipes: Vegan Quinoa Stuffed Bell Peppers, Vegan Lasagna, and Vegan Black Bean Chili.
+  ✓ Correct routing to health agent
+  ✓ Provided substantive answer
+  ✓ Provided confident answer
+
+[4/10] routing_ambiguous_storage_query
+Category: routing | Focus: technical_storage
+Input: Where should I store templates?
+--------------------------------------------------------------------------------
+✓ PASS (Score: 1.0/1.0, Attempts: 1)
+Source: [rag]
+Answer: The storage locations for templates vary depending on the platform and method of creation or download. In Microsoft Word...
+  ✓ Correct routing to rag agent
+  ✓ Provided substantive answer
+  ✓ Provided confident answer
+
+[5/10] rag_document_retrieval_accuracy
+Category: rag_quality | Focus: document_retrieval
+Input: Explain the AWS services used in the notification system
+--------------------------------------------------------------------------------
+✓ PASS (Score: 1.0/1.0, Attempts: 1)
+Source: [rag]
+Answer: The AWS services used in the notification system are Amazon Simple Notification Service (SNS), Amazon Simple Queue Servi...
+  ✓ Correct routing to rag agent
+  ✓ Provided substantive answer
+  ✓ Provided confident answer
+
+[6/10] rag_message_template_storage
+Category: rag_quality | Focus: specific_documentation
+Input: How do I store message templates in the system?
+--------------------------------------------------------------------------------
+✓ PASS (Score: 1.0/1.0, Attempts: 2)
+Source: [rag]
+Answer: Message templates can typically be stored in databases for easier and more scalable access and retrieval. This would inv...
+  ✓ Correct routing to rag agent
+  ✓ Provided substantive answer
+  ✓ Provided confident answer
+
+[7/10] health_profile_awareness
+Category: health_personalization | Focus: profile_utilization
+Input: What can I eat today?
+--------------------------------------------------------------------------------
+✓ PASS (Score: 1.0/1.0, Attempts: 1)
+Source: [health]
+Answer: Here are 3 vegan dish ideas for you to try today: Vegan Quinoa Salad, Lentil Soup, and Roasted Vegetable Wrap.
+  ✓ Correct routing to health agent
+  ✓ Provided substantive answer
+  ✓ Provided confident answer
+
+[8/10] health_allergen_avoidance_critical
+Category: health_personalization | Focus: allergen_awareness
+Input: Suggest some bread recipes
+--------------------------------------------------------------------------------
+✓ PASS (Score: 1.0/1.0, Attempts: 1)
+Source: [health]
+Answer: Here are 3 bread recipe ideas that align with your balanced diet: 1) Whole wheat sandwich bread 2) Italian flatbread 3) ...
+  ✓ Correct routing to health agent
+  ✓ Provided substantive answer
+  ✓ Provided confident answer
+
+[9/10] health_calorie_consideration
+Category: health_personalization | Focus: calorie_awareness
+Input: I'm really hungry, what's a good dinner?
+--------------------------------------------------------------------------------
+✓ PASS (Score: 1.0/1.0, Attempts: 2)
+Source: [health]
+Answer: Here are 3 balanced dinner ideas that suit your profile: 1) Grilled salmon with quinoa and stir-fried vegetables, 2) Chi...
+  ✓ Correct routing to health agent
+  ✓ Provided substantive answer
+  ✓ Provided confident answer
+
+[10/10] a2a_context_preservation
+Category: a2a_integration | Focus: context_awareness
+Input: How do retries work in the notification system?
+--------------------------------------------------------------------------------
+✓ PASS (Score: 1.0/1.0, Attempts: 1)
+Source: [rag]
+Answer: In a notification system, retries are used to handle failed or delayed notifications. A notification service may attempt...
+  ✓ Correct routing to rag agent
+  ✓ Provided substantive answer
+  ✓ Provided confident answer
+
+================================================================================
+EVALUATION SUMMARY
+================================================================================
+Total Cases: 10
+Passed: 10
+Failed: 0
+Success Rate: 100.0%
+
+By Category:
+  routing: 4/4 (100%)
+  rag_quality: 2/2 (100%)
+  health_personalization: 3/3 (100%)
+  a2a_integration: 1/1 (100%)
+================================================================================
+
+Detailed results saved to: evaluation_results_20251210_083508.json
+
+Evaluation complete!
